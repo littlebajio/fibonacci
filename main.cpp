@@ -1,22 +1,16 @@
 #include <iostream>
-using namespace std;
+int fibonacci(int number)
+{
+    if (number == 0)
+        return 0; // 
+    if (number == 1)
+        return 1;
+    return fibonacci(number-1) + fibonacci(number-2);
+}
 int main()
 {
-    int a ,b, k;
-    a=0;
-    b=1;
-    cin >> k;
-    while (k<=0)
-    {
-        cout << "ERROR! Enter the number greater than zero: ";
-        cin >> k;
-    }
-    while (k!=0)
-    {
-        a=a+b;
-        b=a-b;
-        k=k-1;
-        cout << a << " ";
-    }
+    for (int count=0; count < 13; ++count)
+        std:: cout << fibonacci(count) << " ";
+
     return 0;
 }
